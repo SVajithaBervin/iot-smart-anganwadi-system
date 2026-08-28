@@ -1,9 +1,10 @@
 
 Docs
 
-#define BLYNK_TEMPLATE_ID "TMPL3Fv7NlUX8"
-#define BLYNK_TEMPLATE_NAME "esp32"
-#define BLYNK_AUTH_TOKEN "3e3nMluztXM2-Xmj9zmmFL7biE8zrD9b"
+#define BLYNK_TEMPLATE_ID "YOUR_TEMPLATE_ID"
+#define BLYNK_TEMPLATE_NAME "YOUR_TEMPLATE_NAME"
+#define BLYNK_AUTH_TOKEN "YOUR_BLYNK_AUTH_TOKEN"
+
 
 #define BLYNK_PRINT Serial
 
@@ -15,7 +16,7 @@ char ssid[] = "Wokwi-GUEST";
 char pass[] = "";
 
 // ----------- ThingSpeak ----------
-String apiKey = "XFUQP3WK51JFMZ3O";
+String apiKey = "YOUR_THINGSPEAK_API_KEY";
 const char* server = "api.thingspeak.com";
 
 // ---------- VARIABLES ------------
