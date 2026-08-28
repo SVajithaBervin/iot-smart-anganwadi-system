@@ -140,13 +140,17 @@ The prototype includes an alert mechanism for identifying selected health-risk c
       │ Historical Data  │
       └──────────────────┘
 
+
 🔄 Working Principle
 Step 1 — Child Identification
 The child can be identified using the RFID-based attendance mechanism.
+
 Step 2 — Height Measurement
 The height-sensing module collects distance information and uses it to determine the child's height.
+
 Step 3 — Weight Measurement
 The load cell measures the child's weight. The HX711 amplifier conditions the load-cell signal before it is processed by the ESP32.
+
 Step 4 — Data Processing
 The ESP32 receives the sensor values and performs the required processing.
 The system calculates:
@@ -157,12 +161,16 @@ Z-score-related value
 Attendance status
 Predicted weight
 Health/risk indication
+
 Step 5 — Health Assessment
 The processed parameters are evaluated using the implemented prototype logic to provide a basic health-status and risk indication.
+
 Step 6 — IoT Transmission
 The ESP32 sends the processed information to configured IoT platforms through Wi-Fi connectivity.
+
 Step 7 — Dashboard Monitoring
 The data can be viewed through Blynk and ThingSpeak dashboards for real-time and historical monitoring.
+
 Step 8 — Alert Generation
 When the implemented risk conditions are detected, the system can generate an alert through the configured notification mechanism.
 
@@ -194,26 +202,19 @@ IoT Cloud Platforms
 Monitoring & Visualization
 
 🔧 Hardware Components
-Component
-Purpose
-ESP32
-Main microcontroller and Wi-Fi connectivity
-ToF / Distance Sensor
-Height measurement
-Load Cell
-Weight measurement
-HX711
-Load-cell signal amplification and conversion
-RFID MFRC522 / RC522
-Child identification and attendance
-Buzzer
-Alert indication
-Power Supply
-Provides power to the system
-Connecting Wires
-Hardware interconnection
-Measuring Platform / Enclosure
-Supports the child during measurement
+
+Component - Purpose
+
+ESP32 - Main microcontroller and Wi-Fi connectivity
+ToF / Distance Sensor - Height measurement
+Load Cell - Weight measurement
+HX711 Load-cell - signal amplification and conversion
+RFID MFRC522 / RC522 - Child identification and attendance
+Buzzer - Alert indication
+Power Supply - Provides power to the system
+Connecting Wires - Hardware interconnection
+Measuring Platform / Enclosure - Supports the child during measurement
+
 The exact sensor configuration may vary depending on the prototype implementation and simulation environment.
 
 💻 Software & Technologies
@@ -241,8 +242,10 @@ Real-time parameter monitoring
 Documentation & Version Control
 GitHub
 Markdown
+
 🧪 Simulation
 The system can be simulated using Wokwi to test the ESP32-based implementation and observe the processing flow before or alongside physical hardware development.
+
 The simulation environment helps validate:
 ESP32 programming
 Sensor interfacing concepts
@@ -251,9 +254,11 @@ BMI calculation
 Attendance logic
 IoT communication
 Dashboard-related outputs
+
 📡 IoT Monitoring
 Blynk
 Blynk is used as a real-time monitoring interface.
+
 The dashboard can display:
 Height
 Weight
@@ -263,6 +268,7 @@ Attendance
 Health status
 Predicted weight
 Risk indication
+
 ThingSpeak
 ThingSpeak is used for cloud-based storage and visualization.
 The system can transmit parameters such as:
@@ -281,30 +287,23 @@ iot-smart-anganwadi-system/
 │
 ├── src/
 │   └── smart_anganwadi.ino
-│
-├── docs/
 │   ├── abstract.pdf
 │   ├── project-report.pdf
 │   └── project-presentation.pptx
-│
-├── hardware/
-│   └── components-list.md
-│
-├── workflow/
-│   └── system-workflow.png
 │
 ├── outputs/
 │   ├── blynk-dashboard.png
 │   ├── thingspeak-dashboard.png
 │   └── system-output.png
-│
-└── images/
-    ├── prototype.jpg
-    └── circuit.jpg
+|   └── images/
+|   ├── prototype.jpg
+|   └── circuit.jpg
 
 🧩 Implementation
 The ESP32 acts as the central controller of the prototype.
+
 The implementation includes:
+
 Wi-Fi connectivity
 Sensor-data processing
 BMI calculation
@@ -315,21 +314,27 @@ Blynk communication
 ThingSpeak data transmission
 Alert generation
 Serial monitoring
+
 The source code is available in:
 src/smart_anganwadi.ino
+
 📈 Health Data Processing
 The prototype calculates BMI using height and weight:
 BMI = Weight (kg) / Height² (m²)
+
 The system also performs additional data processing to generate health-status and risk indications.
+
 The implemented calculations are prototype-level logic intended for demonstration and academic purposes. Clinical child-growth assessment should use age- and sex-specific standards and professional medical guidance.
 
 🔔 Alert Mechanism
 The prototype includes a notification mechanism for selected risk conditions.
 For example, an alert can be generated when the implemented logic identifies a potential underweight or malnutrition-related risk.
+
 This feature is intended to support early attention and monitoring rather than provide a medical diagnosis.
 
 🧪 Testing
 The prototype was tested through simulation and system-level observation.
+
 Testing areas include:
 ESP32 connectivity
 Sensor interfacing
@@ -346,6 +351,7 @@ Serial monitor output
 
 🚧 Challenges & Learning
 During the development of the project, we worked with multiple hardware modules, embedded programming concepts, sensors, and IoT platforms.
+
 Key Learning Areas
 ESP32 programming
 Embedded C/C++
@@ -366,51 +372,80 @@ The project provided practical experience in integrating embedded hardware, soft
 🌟 Advantages
 Reduces manual data-entry effort.
 Supports digital height and weight monitoring.
+
 Automates BMI calculation.
+
 Enables digital attendance tracking.
+
 Provides real-time IoT monitoring.
+
 Supports historical data visualization.
 Provides basic data-based risk indications.
+
 Helps organize child health-related information.
+
 Demonstrates a low-cost approach for smart monitoring.
+
 Provides a foundation for future AI/ML enhancements.
 
 🌍 Potential Applications
 Anganwadi Centres
 Digital growth and attendance monitoring for children.
+
 Primary Health Centres
 Supportive digital monitoring during routine child health assessments.
+
 Schools and Pre-Schools
 Basic growth-monitoring applications for young children.
+
 Rural Health Monitoring
 IoT-based monitoring in locations where centralized supervision is difficult.
+
 Government and NGO Programs
 The concept can be adapted for large-scale child nutrition and welfare monitoring systems.
+
 Research and Education
 The prototype can be used as an educational platform for embedded systems, IoT, cloud monitoring, and AI-assisted data analysis.
 
 🔮 Future Scope
 The current prototype can be enhanced with the following features:
+
 Advanced machine-learning-based malnutrition prediction.
+
 Training using properly validated child-growth datasets.
+
 Age- and sex-specific growth-standard integration.
+
 Long-term individual growth-trend analysis.
+
 Dedicated web/mobile application.
 Structured cloud database.
+
 Multi-child profile management.
+
 QR/RFID-based child records.
+
 Offline data storage and automatic synchronization.
+
 Automated report generation.
+
 Role-based access for workers and administrators.
+
 Improved sensor calibration and measurement accuracy.
+
 Additional health-monitoring sensors.
+
 Voice assistance in Tamil and English.
+
 Solar-powered implementation.
+
 Multi-centre monitoring.
+
 Integration with appropriate government health-monitoring systems, subject to official APIs, standards, authorization, and privacy requirements.
 
 👩‍💻 My Contribution
 As a member of the project team, my contributions included:
+
 Embedded system integration
 ESP32 programming and implementation support
 Sensor interfacing
@@ -425,6 +460,7 @@ Individual contributions may be updated to accurately reflect the work completed
 
 📚 Documentation
 Additional project documentation is available in the docs/ directory.
+
 It may include:
 Project Abstract
 Project Report
@@ -432,13 +468,17 @@ Project Presentation
 
 🏆 Project Recognition
 The project was developed as an academic and innovation-oriented engineering project in the field of Electronics and Communication Engineering.
+
 It demonstrates the practical integration of:
+
 Embedded Systems + Sensors + IoT + Cloud Monitoring + Data Processing
 
 👥 Team
 Developed as a team project by students of:
+
 Department of Electronics and Communication Engineering
-PET Engineering College, Vallioor, Tamil Nadu, India
+PET Engineering College, Vallioor, Tamil Nadu, India.
+
 Team Members
 S. Vajitha Bervin
 S. Srimathi Mangai
@@ -447,13 +487,18 @@ S. Vahitha Bervin
 
 ⚠️ Disclaimer
 This project is an academic prototype developed for learning, demonstration, and innovation purposes.
+
 The health-related calculations, classifications, and risk indications produced by the prototype must not be considered a medical diagnosis or a substitute for professional healthcare assessment.
+
 Actual deployment for child health monitoring would require validated clinical/growth standards, appropriate calibration, secure handling of personal data, field testing, regulatory considerations, and review by qualified healthcare and government authorities.
 
 📌 Conclusion
 The AI-Enabled IoT Smart Anganwadi System demonstrates how embedded systems, sensors, IoT connectivity, cloud platforms, and data-based analysis can be combined to create a smart child-monitoring solution.
+
 The prototype automates important parts of the monitoring workflow, including height and weight data processing, BMI calculation, attendance handling, IoT transmission, dashboard visualization, and basic risk assessment.
+
 The project provided practical experience in ESP32 programming, sensor interfacing, RFID, load-cell integration, IoT communication, cloud platforms, data processing, debugging, and collaborative engineering.
+
 With further development, validation, and integration of advanced machine-learning models and secure data-management systems, the concept can serve as a foundation for scalable digital monitoring solutions for Anganwadi and child-welfare environments.
 
 📄 License
